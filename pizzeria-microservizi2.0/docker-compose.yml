@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+
+  cassa:
+    image: cassa:0.0.2
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    ports:
+      - '5432:5432'
+    restart: always
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: example
+
